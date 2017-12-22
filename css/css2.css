@@ -1,0 +1,119 @@
+.headLine{
+  		background:#3C3C3C;
+			border:1px solid #D1D1D1;
+			margin: 0px;
+}
+
+body{
+			margin:0px;
+			background:#DEDEDE;
+}
+
+header nav {
+			background-color: black;
+			height: 40px;
+}
+
+header nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			height: 60px;
+}
+
+span {
+			color: rgb(204, 204, 204);
+}
+		
+.right{
+		float: right;
+	
+}
+.left{
+		float: left;
+	
+}
+.right li {
+			float: left;
+}
+li a {
+			display: block;
+			color: white;
+			font-size: 14px;
+			text-align: center;
+			line-height: 10px;
+			padding: 15px 5px;
+			text-decoration: none;
+}
+
+.textA{
+			background-color: white;
+			margin:20px;
+			border: #8E8E8E 1px solid;
+			box-shadow: 4px 4px 5px #888888;
+}
+
+.textA p{
+			margin:10px 20px 10px 20px;	;
+}
+
+.textA img {
+			width: 280px;
+			margin: 10px 20px;	
+}
+
+.textA h1 {
+			margin: 30px 20px 10px 20px;	
+}
+
+.textA h2 {
+			margin: 10px 20px;	
+			color:#9D9D9D ;
+}
+.textA h3 {
+			margin: 10px 20px 10px 20px;	
+			color:#9D9D9D ;
+}
+.textA table {
+			margin: 10px 20px 10px 20px;	
+			border-collapse:collapse;
+			
+}
+.textA table thead{
+			background:#3C3C3C;
+			color: white;
+			
+}
+.textA table tr td{
+			width: 2800px;
+}
+.textA table tfoot{
+			background:#9D9D9D;
+			color: white;	
+}
+.sideCol{
+			border-left: 5px solid gray;
+			color: black;	
+}
+.myLeftImage{
+			height: 40px;
+			width: 10%;
+			float: left;
+}
+.myArea{
+			margin : 20px 100px;
+	 		overflow: auto;
+}
+.myCheckBox{
+			color : blue;
+}
+.myButton input{
+			height: 40px;
+			width: 95%;
+			background:#63B8FF;
+			color: white;
+			border-radius: 10px;
+			margin:20px 20px;
+			text-align: center;
+			cursor: pointer;
+}
