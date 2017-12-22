@@ -1,0 +1,39 @@
+.box1 {
+	border:1px solid #999;
+  background: white;
+  margin: 15px;
+  color: black;
+	width: 200px;
+  height: 100px;
+	float: left;
+}
+.box2 {
+	border:1px solid #999;
+  background: white;
+  margin: 16px;
+  color: black;
+	float: right;
+	width: 120px;
+}
+.box3 {
+	border:1px solid #999;
+  background: white;
+  margin:15px 170px 0px 240px;
+  color: black;
+}
+.img1{
+	width: 80px;
+  height: 80px;
+	margin: 16px;
+}
+.img2{
+	width: 80px;
+  height: 80px;
+}
+.myContainer {
+	border:1px solid #999;
+	background: #eee;
+  padding: 20px;
+	width:auto;
+	overflow: auto;
+}
