@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js4</title>
+    <style>
+        li{
+            display:inline-block;
+            background-color: red;
+            color: #FFFFFF;
+            margin:5px;
+            text-align:center;
+            vertical-align:text-bottom;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="num">
+    <button id="leftIn" onclick="leftIn()">左侧入</button>
+    <button id="rightIn" onclick="rightIn()">右侧入</button>
+    <button id="leftOut" onclick="leftOut()">左侧出</button>
+    <button id="rightOut" onclick="rightOut()">右侧出</button>
+    <button id="s" onclick="sortArr()">排序</button>
+<!--数字队列-->
+<ul id="father"></ul>
+
+<script type="text/javascript">
+    var count=0;
+    var arr=new Array();
+    function leftIn() {
+        var num = document.getElementById("num").value;
+        if(num>100||num<10||count>59){
+            alert("超出范围！");
+            return;
+        }
+
+        count++;
+        arr.unshift(num);
+        var li = document.createElement("li");
+        li.innerHTML =num;
+        li.style.height = num*10 +"px";
+        var father = document.getElementById("father");
+        father.insertBefore(li,father.firstChild);
+    }
+    function rightIn() {
+        if(num>100||num<10||count>59){
+            alert("超出范围！");
+            return;
+        }
+        arr.push(num);
+        count++;
+        var num = document.getElementById("num").value;
+        var li = document.createElement("li");
+        li.innerHTML =num;
+        li.style.height = num*10 +"px";
+        var father = document.getElementById("father");
+        father.appendChild(li);
+    }
+    function leftOut() {
+        count--;
+
+        arr.shift();
+
+        var father = document.getElementById("father");
+        father.removeChild(father.firstChild);
+    }
+    function rightOut() {
+        count--;
+        arr.pop();
+        var father = document.getElementById("father");
+        father.removeChild(father.lastChild);
+    }
+    function sortArr() {
+        for(var i=0;i<arr.length;i++){
+            for(var j=i;j<arr.length;j++){
+                if(arr[j]<arr[i]){
+                    var tmp = arr[j];
+                    arr [j]=arr[i];
+                    arr[i]=tmp;
+                }
+                show();
+
+            }
+        }
+    }
+    function show() {
+        var father = document.getElementById("father");
+
+
+        for(var i =0;i<count;i++){
+            father.removeChild(father.firstChild);
+        }
+        for(var i =0;i<count;i++){
+            var li = document.createElement("li");
+            li.innerHTML =arr[i];
+            li.style.height =arr[i]*10 +"px";
+            father.appendChild(li);
+        }
+
+
+    }
+
+</script>
+</body>
+</html>

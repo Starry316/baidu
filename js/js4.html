@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js4</title>
+    <style>
+        li{
+            display:inline-block;
+            background-color: red;
+            color: #FFFFFF;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="num">
+    <button id="leftIn" onclick="leftIn()">左侧入</button>
+    <button id="rightIn" onclick="rightIn()">右侧入</button>
+    <button id="leftOut" onclick="leftOut()">左侧出</button>
+    <button id="rightOut" onclick="rightOut()">右侧出</button>
+<!--数字队列-->
+<ul id="father"></ul>
+
+<script type="text/javascript">
+
+
+    function leftIn() {
+        var num = document.getElementById("num").value;
+        var li = document.createElement("li");
+        li.innerHTML =num;
+        var father = document.getElementById("father");
+        father.insertBefore(li,father.firstChild);
+    }
+    function rightIn() {
+        var num = document.getElementById("num").value;
+        var li = document.createElement("li");
+        li.innerHTML =num;
+        var father = document.getElementById("father");
+        father.appendChild(li);
+    }
+    function leftOut() {
+        var father = document.getElementById("father");
+        father.removeChild(father.firstChild);
+    }
+    function rightOut() {
+        var father = document.getElementById("father");
+        father.removeChild(father.lastChild);
+    }
+
+</script>
+</body>
+</html>
