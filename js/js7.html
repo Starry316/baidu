@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js6</title>
+    <style>
+
+        .node{
+            border: 2px solid #000000;
+            display:inline-block;
+            margin:30px;
+        }
+        .node2{
+            width: 80px;
+            height: 80px;
+            border: 2px solid #000000;
+            display:inline-block;
+            margin:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="node" id="root">
+    <div class="node">
+        <div class="node">
+            <div class="node2">
+            </div>
+            <div class="node2">
+            </div>
+        </div>
+        <div class="node">
+            <div class="node2">
+            </div>
+            <div class="node2">
+            </div>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node">
+            <div class="node2">
+            </div>
+            <div class="node2">
+            </div>
+        </div>
+        <div class="node">
+            <div class="node2">
+            </div>
+            <div class="node2">
+            </div>
+        </div>
+    </div>
+</div>
+<button onclick="initPreOrder(document.getElementById('root'))">前序遍历</button>
+<script type="text/javascript">
+    var timer=0;
+    function initPreOrder(node) {
+        timer=0;
+        preOrder(node);
+    }
+    function preOrder(node) {
+        if(node){
+            show(node);
+            preOrder(node.children[0]);
+            preOrder(node.children[1]);
+        }
+    }
+    function show(node) {
+        node.style.backgroundColor="#ffffff";
+        setTimeout(function () {
+            node.style.backgroundColor="#44ffff";
+        },timer+=500);
+        setTimeout(function () {
+            node.style.backgroundColor="#ffffff";
+        },timer+=500);
+    }
+
+
+</script>
+</body>
+</html>

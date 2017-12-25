@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js6</title>
+    <style>
+
+        .node{
+            border: 2px solid #000000;
+            display:inline-block;
+            margin:30px;
+        }
+        .node2{
+            width: 80px;
+            height: 80px;
+            border: 2px solid #000000;
+            display:inline-block;
+            margin:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="node" id="root">
+    <p>1</p>
+    <div class="node">
+        <p>2</p>
+        <div class="node">
+            <p>3</p>
+            <div class="node2">
+                <p>4</p>
+            </div>
+            <div class="node2">
+                <p>5</p>
+            </div>
+        </div>
+        <div class="node">
+            <p>6</p>
+            <div class="node2">
+                <p>7</p>
+            </div>
+            <div class="node2">
+                <p>8</p>
+            </div>
+        </div>
+    </div>
+    <div class="node">
+        <p>9</p>
+        <div class="node">
+            <p>10</p>
+            <div class="node2">
+                <p>11</p>
+            </div>
+            <div class="node2">
+                <p>12</p>
+            </div>
+        </div>
+        <div class="node">
+            <p>13</p>
+            <div class="node2">
+                <p>14</p>
+            </div>
+            <div class="node2">
+                <p>15</p>
+            </div>
+        </div>
+    </div>
+    <div class="node">
+        <p>16</p>
+        <div class="node">
+            <p>17</p>
+            <div class="node2">
+                <p>18</p>
+            </div>
+            <div class="node2">
+                <p>19</p>
+            </div>
+        </div>
+        <div class="node">
+            <p>20</p>
+            <div class="node2">
+                <p>21</p>
+            </div>
+            <div class="node2">
+                <p>22</p>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="query">
+<button onclick="initPreOrder(document.getElementById('root'),document.getElementById('query').value)">查询</button>
+<script type="text/javascript">
+    var timer=0;
+    var found=0;
+    function initPreOrder(node,text) {
+        timer=0;
+        found=0;
+        preOrder(node,text);
+        if (found==0)alert("没有找到"+text);
+    }
+    function preOrder(node,text) {
+        if(node){
+            show(node);
+            if(node.children[0].innerText==text){
+                found=1;
+                alert("找到"+text);
+                return;
+            }
+            else for(var i=1;i<node.children.length;i++){
+                preOrder(node.children[i],text);
+                if (found==1)return;
+            }
+        }
+    }
+    function show(node) {
+        node.style.backgroundColor="#ffffff";
+        setTimeout(function () {
+            node.style.backgroundColor="#44ffff";
+        },timer+=500);
+        setTimeout(function () {
+            node.style.backgroundColor="#ffffff";
+        },timer+=500);
+    }
+
+
+</script>
+</body>
+</html>
